@@ -7,29 +7,31 @@ const {
 } = Astro.props;
 ---
 
-<article class="project">
-    <div class="black-border border-radius box-shadow">
-
-        <div class="white-heading">
-            <h3>{title}</h3>
+<li>
+    <article class="project">
+    
+        
+        <div class="project-layout white-content black-border">
+                <div class="white-heading">
+                    <h3>{title}</h3>
+                </div>
+                <figure class="photo">
+                    <img src={imgSrc} alt={imgAlt} class="project-image" />
+                </figure>
+    
+    
         </div>
     
-        <div class="project-layout white-content">
-            <figure class="photo black-border">
-                <img src={imgSrc} alt={imgAlt} class="project-image" />
-            </figure>
-
-
-            <div class="project-short">
+            
+            <div class="project-short scroll-animation">
                 <em><slot name="short" /></em>
             </div>
             
             <div class="project-long">
                 <slot name="long" />
             </div>
-
+            
             <a class="visit-site" href={pageLink}>Visit the site!</a>
-        </div>
-    </div>
-
-</article>
+    
+    </article>
+</li>

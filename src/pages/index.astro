@@ -17,270 +17,275 @@ import Footer from "../components/Footer.astro"
 	<body>
 		<Header/>
 		<main>
-			<Profile />
+			<div class="main-layout">
 
-			<section class="white-on-green-container black-border box-shadow border-radius">
-				<h2 class="white-heading">Bio</h2>
-				<div class="green-content">
-					<p>Hi! I'm Maja Wendelin, an Amsterdam-based aspiring Frontend Developer and Designer, currently looking for an internship.</p>
-					<p>I like experimenting with different ways in which we can interact with the internet. I love using the web as a creative space to express myself.</p>
-					<p>I'm also a big advocate for web accessibility, and have worked on a few projects with and for people with a visual impairment.</p>
-					<p>I want the web to be a space for diversity and creativity, and I hope to make a mark in the world by working on this goal.</p>
-				</div>
-			</section>
-
-			<section class="skills-container white-on-green-container black-border box-shadow border-radius">
-				<div class="white-heading">
-					<h2>Skills</h2>
-				</div>
-				<div class="green-content">
-
-					<div class="skill css">
-						<h3>CSS</h3>
-						<div class="skill-slider">
-							<div></div>
-							<div></div>
+				<Profile />
+	
+				<section class="bio scroll-animation white-on-green-container black-border box-shadow border-radius">
+					<h2 class="white-heading">Bio</h2>
+					<div class="green-content">
+						<p>Hi! I'm Maja Wendelin, an Amsterdam-based aspiring Frontend Developer and Designer, currently looking for an internship.</p>
+						<p>I like experimenting with different ways in which we can interact with the internet. I love using the web as a creative space to express myself.</p>
+						<p>I'm also a big advocate for web accessibility, and have worked on a few projects with and for people with a visual impairment.</p>
+						<p>I want the web to be a space for diversity and creativity, and I hope to make a mark in the world by working on this goal.</p>
+					</div>
+				</section>
+	
+				<section class="scroll-animation skills-container white-on-green-container black-border box-shadow border-radius">
+					<div class="white-heading">
+						<h2>Skills</h2>
+					</div>
+					<div class="green-content">
+	
+						<div class="skill css">
+							<h3>CSS</h3>
+							<div class="skill-slider">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="skill html">
+							<h3>HTML</h3>
+							<div class="skill-slider">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="skill accessibility">
+							<h3>Web Accessibility</h3>
+							<div class="skill-slider">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="skill javascript">
+							<h3>JavaScript</h3>
+							<div class="skill-slider">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="skill astro">
+							<h3>Astro</h3>
+							<div class="skill-slider">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="skill wordpress">
+							<h3>Wordpress/PHP</h3>
+							<div class="skill-slider">
+								<div></div>
+								<div></div>
+							</div>
 						</div>
 					</div>
-					<div class="skill html">
-						<h3>HTML</h3>
-						<div class="skill-slider">
-							<div></div>
-							<div></div>
-						</div>
+				</section>
+	
+	
+				<section class="scroll-animation likes-dislikes likes black-border border-radius box-shadow">
+					<div class="white-heading">
+						<h2>Likes</h2>
 					</div>
-					<div class="skill accessibility">
-						<h3>Web Accessibility</h3>
-						<div class="skill-slider">
-							<div></div>
-							<div></div>
-						</div>
+					<div class="content">
+						<ul>
+							<li>Cats</li>
+							<li>Playing Bluegrass music with my friends</li>
+							<li>Lindy Hop</li>
+							<li>Figure skating</li>
+						</ul>
 					</div>
-					<div class="skill javascript">
-						<h3>JavaScript</h3>
-						<div class="skill-slider">
-							<div></div>
-							<div></div>
-						</div>
+				</section>
+	
+				<section class="scroll-animation likes-dislikes dislikes black-border border-radius box-shadow">
+					<div class="white-heading">
+						<h2>Dislikes</h2>
 					</div>
-					<div class="skill astro">
-						<h3>Astro</h3>
-						<div class="skill-slider">
-							<div></div>
-							<div></div>
-						</div>
+					<div class="content">
+						<ul>
+							<li>Insects</li>
+							<li>Seafood</li>
+							<li>Artificial Intelligence</li>
+							<li>Capitalism</li>
+						</ul>
 					</div>
-					<div class="skill wordpress">
-						<h3>Wordpress/PHP</h3>
-						<div class="skill-slider">
-							<div></div>
-							<div></div>
-						</div>
-					</div>
-				</div>
-			</section>
-
+				</section>
+			</div>
 			
-			
 
-			<section class="likes-dislikes likes black-border border-radius box-shadow">
-				<div class="white-heading">
-					<h2>Likes</h2>
-				</div>
-				<div class="content">
-					<ul>
-						<li>Cats</li>
-						<li>Playing Bluegrass music with my friends</li>
-						<li>Lindy Hop</li>
-						<li>Figure skating</li>
+			<section class="projects">
+				<div class="projects-width">
+
+					<h2 class="scroll-animation h2-container black-border box-shadow border-radius">Projects</h2>
+					<ul class="project-grid">
+						<Project
+							title="Walking Bee"
+							imgSrc="static/media/CSS.png"
+							imgAlt="A screenshot of my website for the CSS project, a bee that can walk!"
+							pageLink="https://ginchanah.github.io/CSS/"
+						>
+							<p slot="short">
+								A walking bee that might also be me.
+							</p>
+		
+							<div slot="long">
+								<p>This is a project I made for a subject called "CSS to the rescue".</p>
+								<p>The point of the subject was to create a walking animation by using new CSS features and absolutely no JavaScript.</p>
+							</div>
+						</Project>
+						
+						<Project
+							title="Self Portrait"
+							imgSrc="static/media/sprint0.png"
+							imgAlt="A screenshot of my website for the self portrait project, myself as a CSS and HTML only illustration!"
+							pageLink="https://ginchanah.github.io/Sprint0/"
+						>
+							<p slot="short">
+								A portrait of myself, using only CSS and HTML.
+							</p>
+		
+							<div slot="long">
+								<p>This was my first attempt at making a Screenreader friendly portrait of myself, made for the minor Web Design and Development.</p>
+								<p>If you inspect the source code, you will see that there is a lot more information in this website than meets the eye!</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="A screenreader game"
+							imgSrc="static/media/hcd.png"
+							imgAlt="A black website with no content. At least not for the seeing!"
+							pageLink="https://ginchanah.github.io/HCD/"
+						>
+							<p slot="short">
+								A website for Ihab. Not for you!!
+							</p>
+		
+							<div slot="long">
+								<p>A website for the subject "Human Centered Design" for the minor Web Design and Development.</p>
+								<p>This is a website catered to one specific person, who is my case is a blind man called Ihab.</p>
+								<p>I made this game over the course of a few weeks and several feedback sessions with Ihab, to ensure usability and FUN!!</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="Online Tax Form"
+							imgSrc="static/media/bt.png"
+							imgAlt="A small part of an online tax form."
+							pageLink="https://ginchanah.github.io/BrowserTechnologies/"
+						>
+							<p slot="short">
+								A tax form in the house style of Nederlandse Spoorwegen. Why not?
+							</p>
+		
+							<div slot="long">
+								<p>Created for the minor Web Design and Development.</p>
+								<p>This tax form is a school assignment and not meant for fraud, please don't sue me. :)</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="NEBULA Xplorer"
+							imgSrc="static/media/hackathon.png"
+							imgAlt="A black hole"
+							pageLink="https://diegor03.github.io/Hackton_2026_Team_2/"
+						>
+							<p slot="short">
+								An incredibly heavy and non optimalized website for the satellite "NEBULA Xplorer"
+							</p>
+		
+							<div slot="long">
+								<p>This website was created in a team of 4 for a Hackathon.</p>
+								<p>We competed in creating a website for a student-lead SRON project for the satellite "NEBULA Xplorer".</p>
+								<p>We did not win, but we did make some cool animations!</p>
+							</div>
+						</Project>
+		
+						
+		
+						<Project
+							title="D&D Character Builder"
+							imgSrc="static/media/api.png"
+							imgAlt="A DnD race selector, with every race in a circle around the selected race. Every race is displayed by a fancy scribbly text and an emoji that I thought matched their vibe."
+							pageLink="https://api-website-20ns.onrender.com/"
+						>
+							<p slot="short">
+								An incomplete Dungeons and Dragons character builder.
+							</p>
+		
+							<div slot="long">
+								<p>This website was an assignemnt for the minor Web Design and Development to work with APIs.</p>
+								<p>As a fan of Dungeons and Dragons, I wanted to create my own character builder, but so far I have maybe a 10% of everything I would need for its completion.</p>
+								<p>This is an ongoing project.</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="The Hybrid City"
+							imgSrc="static/media/meesterproef.png"
+							imgAlt="A screenshot of the homepage of the glossary of terms that describe 'the hybrid city'"
+							pageLink="https://glossary-inter-facing-the-hybrid-city.onrender.com/"
+						>
+							<p slot="short">
+								A glossary website with cool animations.
+							</p>
+		
+							<div slot="long">
+								<p>This was my final project for the minor Web Design and Development.</p>
+								<p>This website was created in a team of 4, and is currently still being worked on.</p>
+								<p>The point was to create a website for a real customer.</p>
+								<p>In the website we had bring alive glossary items relating to our customers research by creating typographic animations!</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="Andreas Prints"
+							imgSrc="static/media/andreas.png"
+							imgAlt="A photo of an empty classroom, in black and white."
+							pageLink="https://andreasprints.nl/"
+						>
+							<p slot="short">
+								An archive website for a photographer.
+							</p>
+		
+							<div slot="long">
+								<p>This is an ongoing freelance project that I am working on.</p>
+								<p>I custom programmed a WordPress theme for a photographer who wanted to create an online archive for himself.</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="Jiyukan Karlsruhe"
+							imgSrc="static/media/dojo.png"
+							imgAlt="The german text 'Aikido im Jiyukan Karlsruhe' written on a black background with a red japanese temple in the middle."
+							pageLink="https://aikido-jiyukan.de/"
+						>
+							<p slot="short">
+								A website for a martial arts dojo.
+							</p>
+		
+							<div slot="long">
+								<p>I created this custom WordPress theme for the website of my parents martial arts dojo.</p>
+								<p>If you're ever in the German town of Karlsruhe, come and have a look!</p>
+							</div>
+						</Project>
+		
+						<Project
+							title="Internship"
+							imgSrc="static/media/baden-airpark.png"
+							imgAlt="The homepage of an airline, with the flight search showing."
+							pageLink="https://www.baden-airpark.de/"
+						>
+							<p slot="short">
+								Helping with accessibility work on, among other things, the Baden Airpark Website.
+							</p>
+		
+							<div slot="long">
+								<p>Within the course of an internship I did at <a href="https://www.nova-web.de/">Nova Digital</a>, I got to work on the accessibility on a number of their websites.</p>
+								<p>The most extensive work I did was on the Baden Airpark website.</p>
+								<p>I did an accessibility audit that I also presented to the customer, and then helped on implementing some of the changes (the nature of which I am not allowed to share 🙂).</p>
+							</div>
+						</Project>
 					</ul>
-				</div>
-			</section>
-
-			<section class="likes-dislikes dislikes black-border border-radius box-shadow">
-				<div class="white-heading">
-					<h2>Dislikes</h2>
-				</div>
-				<div class="content">
-					<ul>
-						<li>Insects</li>
-						<li>Seafood</li>
-						<li>Artificial Intelligence</li>
-						<li>Capitalism</li>
-					</ul>
-				</div>
-			</section>
-
-		<section class="projects">
-				<h2 class="h2-container black-border box-shadow border-radius">Projects</h2>
-				<div class="project-grid">
-					<Project
-						title="Walking Bee"
-						imgSrc="static/media/CSS.png"
-						imgAlt="A screenshot of my website for the CSS project, a bee that can walk!"
-						pageLink="https://ginchanah.github.io/CSS/"
-					>
-						<p slot="short">
-							A walking bee that might also be me.
-						</p>
-	
-						<div slot="long">
-							<p>This is a project I made for a subject called "CSS to the rescue".</p>
-							<p>The point of the subject was to create a walking animation by using new CSS features and absolutely no JavaScript.</p>
-						</div>
-					</Project>
-					
-					<Project
-						title="Self Portrait"
-						imgSrc="static/media/sprint0.png"
-						imgAlt="A screenshot of my website for the self portrait project, myself as a CSS and HTML only illustration!"
-						pageLink="https://ginchanah.github.io/Sprint0/"
-					>
-						<p slot="short">
-							A portrait of myself, using only CSS and HTML.
-						</p>
-	
-						<div slot="long">
-							<p>This was my first attempt at making a Screenreader friendly portrait of myself, made for the minor Web Design and Development.</p>
-							<p>If you inspect the source code, you will see that there is a lot more information in this website than meets the eye!</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="A screenreader game"
-						imgSrc="static/media/hcd.png"
-						imgAlt="A black website with no content. At least not for the seeing!"
-						pageLink="https://ginchanah.github.io/HCD/"
-					>
-						<p slot="short">
-							A website for Ihab. Not for you!!
-						</p>
-	
-						<div slot="long">
-							<p>A website for the subject "Human Centered Design" for the minor Web Design and Development.</p>
-							<p>This is a website catered to one specific person, who is my case is a blind man called Ihab.</p>
-							<p>I made this game over the course of a few weeks and several feedback sessions with Ihab, to ensure usability and FUN!!</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="Online Tax Form"
-						imgSrc="static/media/bt.png"
-						imgAlt="A small part of an online tax form."
-						pageLink="https://ginchanah.github.io/BrowserTechnologies/"
-					>
-						<p slot="short">
-							A tax form in the house style of Nederlandse Spoorwegen. Why not?
-						</p>
-	
-						<div slot="long">
-							<p>Created for the minor Web Design and Development.</p>
-							<p>This tax form is a school assignment and not meant for fraud, please don't sue me. :)</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="NEBULA Xplorer"
-						imgSrc="static/media/hackathon.png"
-						imgAlt="A black hole"
-						pageLink="https://diegor03.github.io/Hackton_2026_Team_2/"
-					>
-						<p slot="short">
-							An incredibly heavy and non optimalized website for the satellite "NEBULA Xplorer"
-						</p>
-	
-						<div slot="long">
-							<p>This website was created in a team of 4 for a Hackathon.</p>
-							<p>We competed in creating a website for a student-lead SRON project for the satellite "NEBULA Xplorer".</p>
-							<p>We did not win, but we did make some cool animations!</p>
-						</div>
-					</Project>
-	
-					
-	
-					<Project
-						title="D&D Character Builder"
-						imgSrc="static/media/api.png"
-						imgAlt="A DnD race selector, with every race in a circle around the selected race. Every race is displayed by a fancy scribbly text and an emoji that I thought matched their vibe."
-						pageLink="https://api-website-20ns.onrender.com/"
-					>
-						<p slot="short">
-							An incomplete Dungeons and Dragons character builder.
-						</p>
-	
-						<div slot="long">
-							<p>This website was an assignemnt for the minor Web Design and Development to work with APIs.</p>
-							<p>As a fan of Dungeons and Dragons, I wanted to create my own character builder, but so far I have maybe a 10% of everything I would need for its completion.</p>
-							<p>This is an ongoing project.</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="The Hybrid City"
-						imgSrc="static/media/meesterproef.png"
-						imgAlt="A screenshot of the homepage of the glossary of terms that describe 'the hybrid city'"
-						pageLink="https://glossary-inter-facing-the-hybrid-city.onrender.com/"
-					>
-						<p slot="short">
-							A glossary website with cool animations.
-						</p>
-	
-						<div slot="long">
-							<p>This was my final project for the minor Web Design and Development.</p>
-							<p>This website was created in a team of 4, and is currently still being worked on.</p>
-							<p>The point was to create a website for a real customer.</p>
-							<p>In the website we had bring alive glossary items relating to our customers research by creating typographic animations!</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="Andreas Prints"
-						imgSrc="static/media/andreas.png"
-						imgAlt="A photo of an empty classroom, in black and white."
-						pageLink="https://andreasprints.nl/"
-					>
-						<p slot="short">
-							An archive website for a photographer.
-						</p>
-	
-						<div slot="long">
-							<p>This is an ongoing freelance project that I am working on.</p>
-							<p>I custom programmed a WordPress theme for a photographer who wanted to create an online archive for himself.</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="Jiyukan Karlsruhe"
-						imgSrc="static/media/dojo.png"
-						imgAlt="The german text 'Aikido im Jiyukan Karlsruhe' written on a black background with a red japanese temple in the middle."
-						pageLink="https://aikido-jiyukan.de/"
-					>
-						<p slot="short">
-							A website for a martial arts dojo.
-						</p>
-	
-						<div slot="long">
-							<p>I created this custom WordPress theme for the website of my parents martial arts dojo.</p>
-							<p>If you're ever in the German town of Karlsruhe, come and have a look!</p>
-						</div>
-					</Project>
-	
-					<Project
-						title="Internship"
-						imgSrc="static/media/baden-airpark.png"
-						imgAlt="The homepage of an airline, with the flight search showing."
-						pageLink="https://www.baden-airpark.de/"
-					>
-						<p slot="short">
-							Helping with accessibility work on, among other things, the Baden Airpark Website.
-						</p>
-	
-						<div slot="long">
-							<p>Within the course of an internship I did at <a href="https://www.nova-web.de/">Nova Digital</a>, I got to work on the accessibility on a number of their websites.</p>
-							<p>The most extensive work I did was on the Baden Airpark website.</p>
-							<p>I did an accessibility audit that I also presented to the customer, and then helped on implementing some of the changes (the nature of which I am not allowed to share 🙂).</p>
-						</div>
-					</Project>
 				</div>
 
 			</section>
