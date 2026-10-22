@@ -27,6 +27,8 @@
 
     --walking-maja-width: 3rem;
 
+    --focus-styling: 6px dotted var(--black);
+
     @media (width > 80rem) {
         --walking-maja-width: 4rem;
     }
@@ -120,6 +122,7 @@
             text-decoration-style: wavy;
             
         }
+
     }
 
     figure {
@@ -131,6 +134,10 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+
+    :focus-visible {
+        outline: var(--focus-styling);
     }
     
 }
@@ -324,17 +331,21 @@
         max-width: var(--max-screen-width);
         width: 100%;
         gap: var(--gap);
+        
     }
 
     .main-layout {
         display: grid;
         gap: var(--gap);
         max-width: 90vw;
+        
 
     }
     
     @media (width > 33rem) {
         .main-layout {
+            grid-template-columns: 4fr 3fr;
+
             .profile {
                 grid-area: profile;
             }
@@ -384,6 +395,8 @@
 
     @media (width > 60rem) {
         .main-layout {
+            grid-template-columns: 1fr 1fr;
+
             grid-template-areas: 
                 'profile     bio'
                 'skills   likes'
@@ -424,11 +437,25 @@
     /* ********* */
     
     .profile {
+        .dead-maja {
+            display: none;
+        }
+        
+
+        &.dead {
+            .alive-maja {
+                display: none;
+            }
+            .dead-maja {
+                display: block;
+            }
+        }
     
         figure {
             width: 100%;
             height: auto;
             aspect-ratio: 100/70;
+            
     
             img {
                 object-position: 50% 7%;
@@ -496,6 +523,7 @@
                 &.is-active {
                     background-image: url(/static/media/heart-red.svg);
                 }
+
             }
         }
     
@@ -714,18 +742,18 @@
                 border: var(--border);
                 border-radius: var(--border-radius);
                 box-shadow: var(--box-shadow);
-                background: var(--light-orange);
+                background: var(--light-pink);
                 text-decoration: none;
                 color: black;
 
                 transition: 0.1s;
             }
 
-            .visit-site:hover {
-                background-color: var(--light-pink);
+            .visit-site:hover, .visit-site:focus-visible {
+                background-color: var(--light-blue);
             }
 
-            .visit-site:active {
+            .visit-site:active, .visit-site:focus-visible {
                 box-shadow: none;
                 translate: var(--box-shadow-translate);
             }
@@ -752,6 +780,25 @@
             gap: 10px;
             svg {
                 width: 3rem;
+                transition: 0.1s;
+            }
+        }
+
+
+        .logo-link {
+            &:hover, &:focus-visible {
+                .logo-svg svg {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:focus-visible {
+                outline: none;
+
+                .logo-svg svg {
+                    outline: var(--focus-styling);
+                }
+
             }
         }
     }
@@ -805,7 +852,8 @@
             header {
     
                 .h1-container {
-                    width: 100vw;
+                    width: 100%;
+                   
                     margin: 0;
                     border-radius: 0;
                     padding: 10px;

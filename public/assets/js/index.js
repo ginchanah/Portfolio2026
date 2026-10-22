@@ -1,10 +1,20 @@
 console.log("hello world")
 
 // MARK: heart logic
+const profile = document.querySelector('.profile')
 const container = document.querySelector('.hearts-container');
 const hearts = Array.from(container.querySelectorAll('.heart'));
+const healthDisplay = document.querySelector(".current-health")
+const announcement = document.getElementById('dead-announcement');
+
 
 let currentRating = 5;
+
+healthDisplay.textContent = currentRating;
+
+
+
+
 
 hearts.forEach((heart) => {
     heart.classList.add('is-active');
@@ -33,6 +43,29 @@ hearts.forEach((heart) => {
         }
 
         updateHearts();
+
+        console.log(value)
+
+        // display the correct image when dead
+        if(!heart.classList.contains("is-active") && value === 1) {
+            profile.classList.add("dead")
+            console.log("dead")
+
+            announcement.textContent = "Maja is now dead"
+
+        } else {
+            profile.classList.remove("dead")
+
+            announcement.textContent = "Maja is alive"
+        }
+
+        // display correct health value
+        if(value && heart.classList.contains("is-active")) {
+            
+            healthDisplay.textContent = value;
+        } else {
+            healthDisplay.textContent = value - 1;
+        }
     });
 });
 

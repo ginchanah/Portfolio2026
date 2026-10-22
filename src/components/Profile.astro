@@ -5,10 +5,18 @@
     <div class="white-heading">
         <h2>Profile</h2>
     </div>
-    <div class="green-content">
-        <figure class="photo black-border">
-            <img src="/static/media/maja-2.png" alt="A picture of me, standing in front of a white wall. A standart portrait shot. But I look happy.">
+    <div class="green-content" aria-atomic="true" aria-live="assertive" role="status">
+        <figure class="photo black-border alive-maja">
+            <img src="/static/media/maja-2.png" alt="A picture of me, standing in front of a white wall. A standard portrait. But I look happy.">
         </figure>
+
+        <figure class="photo black-border dead-maja">
+            <img src="/static/media/ghost.png" alt="a white ghost with crosses for eyes on a black background">
+        </figure>
+
+        <p class="visually-hidden" id="dead-announcement"></p>
+
+
         <div class="general-info">
             <p class="input name">Maja</p>
             <div class="flag-p-container">
@@ -20,13 +28,14 @@
                 <p class="input level">Level 24</p>
             </div>
         </div>
-        <div class="hearts-container" role="radiogroup" aria-label="Rating">
-            <button class="heart" data-value="1" role="radio" aria-checked="false" aria-label="1 out of 5"></button>
-            <button class="heart" data-value="2" role="radio" aria-checked="false" aria-label="2 out of 5"></button>
-            <button class="heart" data-value="3" role="radio" aria-checked="false" aria-label="3 out of 5"></button>
-            <button class="heart" data-value="4" role="radio" aria-checked="false" aria-label="4 out of 5"></button>
-            <button class="heart" data-value="5" role="radio" aria-checked="false" aria-label="5 out of 5"></button>
+        <div class="hearts-container" role="radiogroup" aria-label="Maja's health bar">
+            <button class="heart" data-value="1" role="radio" aria-checked="false" aria-label="Maja's health: 1 out of 5"></button>
+            <button class="heart" data-value="2" role="radio" aria-checked="false" aria-label="Maja's health: 2 out of 5"></button>
+            <button class="heart" data-value="3" role="radio" aria-checked="false" aria-label="Maja's health: 3 out of 5"></button>
+            <button class="heart" data-value="4" role="radio" aria-checked="false" aria-label="Maja's health: 4 out of 5"></button>
+            <button class="heart" data-value="5" role="radio" aria-checked="false" aria-label="Maja's health: 5 out of 5"></button>
         </div>
+        <p class="visually-hidden" aria-atomic="true" aria-live="assertive" role="status">Current health: <span class="current-health"></span></p>
 
         
     </div>
