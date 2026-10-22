@@ -4,5 +4,5 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ginchanah.github.io',
-  base: '/Portfolio2026'
+  base: process.env.NODE_ENV === 'production' ? '/Portfolio2026/' : '/',
 })
