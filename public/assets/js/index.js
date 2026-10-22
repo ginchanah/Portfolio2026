@@ -1,4 +1,3 @@
-console.log("hello world")
 
 // MARK: heart logic
 const profile = document.querySelector('.profile')
@@ -44,12 +43,10 @@ hearts.forEach((heart) => {
 
         updateHearts();
 
-        console.log(value)
 
         // display the correct image when dead
         if(!heart.classList.contains("is-active") && value === 1) {
             profile.classList.add("dead")
-            console.log("dead")
 
             announcement.textContent = "Maja is now dead"
 
