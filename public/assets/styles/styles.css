@@ -22,7 +22,17 @@
     --box-shadow-translate: 0.4rem 0.4rem;
 
     --gap: 40px;
+
+    --max-screen-width: 116rem;
+
+    --walking-maja-width: 3rem;
+
+    @media (width > 80rem) {
+        --walking-maja-width: 4rem;
+    }
+
 }
+
 
 @layer general, utility, specific;
 
@@ -102,7 +112,7 @@
     a {
         color: var(--black);
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 2px;
         text-decoration-skip-ink: none;
 
 
@@ -112,6 +122,16 @@
         }
     }
 
+    figure {
+        margin: 0;
+    
+        img {
+            display: block;  
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     
 }
 
@@ -125,15 +145,15 @@
     /* MARK: utility classes
     /* ********** */
     
-    figure {
+    .visually-hidden {
+        border: 0;
+        clip-path: inset(50%);
+        height: 1px;
         margin: 0;
-    
-        img {
-            display: block;  
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
     
     
@@ -161,6 +181,8 @@
     .white-on-green-container {
         display: grid;
         max-width: 90vw;
+        align-content: start;
+        height: max-content;
     }
     
     .white-heading {
@@ -175,7 +197,7 @@
         h2, h3 {
             margin: 0;
             max-width: 100%;
-            font-size: clamp(1rem, 7cqw, 2rem);
+            font-size: clamp(1rem, 7cqw, 1.9rem);
         }
     }
 
@@ -196,12 +218,18 @@
         margin: 0 0 var(--gap) 0;
         padding: 20px;
         width: 90vw;
+        max-width: var(--max-screen-width);
         height: min-content;
         background: var(--main-color);
         position: relative;
         text-align: center;
 
         font-size: clamp(1.5rem, 7vw, 2.5rem);
+
+        @media (width > 116rem) {
+           
+            width: 100%;
+        }
     }
 }
 
@@ -218,6 +246,8 @@
     /* **** */
     
     body {
+        display: grid;
+        justify-items: center;
         margin: 0;
         padding: 0;
         min-height: 100vh;
@@ -242,6 +272,7 @@
         height: min-content;
         display: grid;
         place-items: center;
+        max-width: var(--max-screen-width);
     
         .h1-container {
             box-sizing: border-box;
@@ -251,6 +282,7 @@
             justify-content: space-between;
             align-items: center;
             width: 90vw;
+            max-width: var(--max-screen-width);
             height: min-content;
             background: var(--main-color);
             position: relative;
@@ -268,8 +300,10 @@
         }
 
         svg:hover {
-            transform: rotate(3.25turn);
-            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            @media (prefers-reduced-motion: no-preference) {
+                transform: rotate(3.25turn);
+                transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
             
 
         }
@@ -287,7 +321,8 @@
         align-items: start;
         justify-items: center;
         grid-auto-flow: dense;
-    
+        max-width: var(--max-screen-width);
+        width: 100%;
         gap: var(--gap);
     }
 
@@ -320,11 +355,16 @@
                 grid-area: dislikes;
             }
 
+            .walking-maja-container {
+                grid-area: maja;
+            }
+
             grid-template-areas: 
                 'profile profile'
                 'bio         bio'
                 'skills   skills'
                 'likes  dislikes'
+                'maja       maja'
             ;
 
             
@@ -337,6 +377,7 @@
                 'profile     likes'
                 'bio   bio'
                 'skills  dislikes'
+                'maja maja'
             ;
         }
     }
@@ -347,9 +388,33 @@
                 'profile     bio'
                 'skills   likes'
                 'skills  dislikes'
+                'maja  maja'
             ;
         }
     }
+
+     @media (width > 78rem) {
+        .main-layout {
+            grid-template-areas: 
+                'profile     bio'
+                'profile maja'
+                'skills   likes'
+                'skills  dislikes'
+            ;
+
+            
+            
+        }
+    }
+
+    @media (width > 116rem) {
+        .main-layout {
+            max-width: var(--max-screen-width);
+            justify-self: start;
+        }
+    }
+
+     
 
     
     
@@ -509,8 +574,47 @@
         
     }
 
+    /* **** */
+    /* MARK: Walking Maja
+    /* ***** */
 
-     /* **** */
+    .walking-maja-container {
+        width: 100%;
+        container-type: inline-size;
+        
+
+        &:hover {
+            .walking-maja {
+                @media (prefers-reduced-motion: no-preference) {
+                    transform: translate(calc(100cqw - var(--walking-maja-width)));
+                }
+
+            }
+            svg {
+                transform-origin: bottom center;
+    
+                @media (prefers-reduced-motion: no-preference) {
+                    animation: rockingMaja 1.25s infinite steps(1, end);
+                }
+            }
+        }
+        
+
+        .walking-maja {
+            transition: 15s;
+            transition-timing-function: linear;
+            width: var(--walking-maja-width);
+
+            
+        }
+
+    }
+
+    
+
+
+
+    /* **** */
     /* MARK: Projects
     /* ***** */
 
@@ -518,13 +622,22 @@
         width: 100%;
         display: grid;
         justify-items: center;
-        background-color: var(--light-yellow);
+        background-color: var(--light-green);
         padding: var(--gap) 0;
+
+        
 
     }
 
+
+
     .projects-width {
-        max-width: 90vw;
+        width: 90vw;
+        max-width: var(--max-screen-width);
+
+        @media (width > 116rem) {
+            padding: var(--gap);
+        }
     }
 
     .project-grid {
@@ -601,7 +714,7 @@
                 border: var(--border);
                 border-radius: var(--border-radius);
                 box-shadow: var(--box-shadow);
-                background: var(--light-green);
+                background: var(--light-orange);
                 text-decoration: none;
                 color: black;
 
@@ -626,10 +739,12 @@
     /* ***** */
 
     footer {
-        background-color: var(--light-pink);
+        background-color: var(--light-blue);
         padding: var(--gap) 0;
         display: grid;
         place-items: center;
+        width: 100%;
+        max-width: var(--max-screen-width);
 
         ul {
             max-width: 90vw;
@@ -668,39 +783,45 @@
     /* MARK: sticky headings
     /* ***** */
     
-    @supports (container-type: scroll-state) {
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
     
-            container-type: scroll-state;
-            container-name: header;
-        }
-    
-        .h1-container {
-            transition: 0.1s;
-        }
-    }
-    
-    @container header scroll-state(stuck: top) {
-        header {
-
+    @media (prefers-reduced-motion: no-preference) {
+        @supports (container-type: scroll-state) {
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+        
+                container-type: scroll-state;
+                container-name: header;
+            }
+        
             .h1-container {
-                width: 100vw;
-                margin: 0;
-                border-radius: 0;
-                padding: 10px;
-
-                svg {
-                    height: 4em;
-                }
-
-                h1 {
-                    font-size: clamp(1rem, 7vw, 2.5rem);
+                transition: 0.1s;
+            }
+        }
+        
+       
+        @container header scroll-state(stuck: top) {
+            header {
+    
+                .h1-container {
+                    width: 100vw;
+                    margin: 0;
+                    border-radius: 0;
+                    padding: 10px;
+    
+                    svg {
+                        height: 4em;
+                        max-height: 10vw;
+                    }
+    
+                    h1 {
+                        font-size: clamp(1rem, 7vw, 2.3rem);
+                    }
                 }
             }
         }
+        
     }
 }
 
@@ -718,4 +839,18 @@
 
 }
 
+@keyframes walkingMaja {
+    50% {
+        transform: translate(calc(100cqw - var(--walking-maja-width)));
+    }
+}
 
+@keyframes rockingMaja {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
