@@ -512,7 +512,7 @@
             
     
             img {
-                object-position: 50% 7%;
+                object-position: 50% 40%;
     
             }
         }
@@ -559,7 +559,7 @@
     
         .hearts-container {
             display: flex;
-            >div:focus-within {
+            >div:has(.heart:focus-visible) {
                 outline: var(--focus-styling);
             }
 
