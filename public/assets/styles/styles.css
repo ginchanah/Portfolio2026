@@ -559,6 +559,10 @@
     
         .hearts-container {
             display: flex;
+            >div:focus-within {
+                outline: var(--focus-styling);
+            }
+
             .heart {
                 appearance: none;
                 border: none;
@@ -689,6 +693,7 @@
     /* ***** */
 
     .walking-maja-container {
+        padding: 10px;
         width: 100%;
         container-type: inline-size;
         
