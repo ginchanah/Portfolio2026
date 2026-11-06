@@ -11,7 +11,7 @@ const {
     <article class="project">
     
         
-        <div class="project-layout white-content black-border">
+        <div class="project-layout white-content black-border scroll-animation">
                 <div class="white-heading">
                     <h3>{title}</h3>
                 </div>
@@ -27,11 +27,11 @@ const {
                 <em><slot name="short" /></em>
             </div>
             
-            <div class="project-long">
+            <div class="project-long scroll-animation">
                 <slot name="long" />
             </div>
             
-            <a class="visit-site" href={pageLink}>Visit the site<span class="visually-hidden">{title}</span>!</a>
+            <a class="visit-site scroll-animation" href={pageLink}>Visit the site<span class="visually-hidden">{title}</span>!</a>
     
     </article>
 </li>

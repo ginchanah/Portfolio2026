@@ -474,13 +474,6 @@
         }
     }
 
-    @media (width > 116rem) {
-        .main-layout {
-            max-width: var(--max-screen-width);
-            justify-self: start;
-        }
-    }
-
      
 
     
@@ -909,7 +902,7 @@
             view-timeline: --block-centered block;
             
             animation-timeline: --block-centered;
-            animation-range: cover 30% cover 80%;
+            animation-range: entry 30px entry 150px;;
     
             animation-name: appear;
             animation-fill-mode: both;
@@ -975,12 +968,14 @@
 
 
 @keyframes appear {
-
-  50% {
-    box-shadow: none;
-    translate: var(--box-shadow-translate);
-  }
-
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes walkingMaja {
